@@ -9,8 +9,8 @@ Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the 
   - [The Pipeline Workflow](#The-Pipeline-Workflow)
   - [Prerequisites](#Prerequisites)
   - [Installation](#Installation)
-- [Create and activate a virtual environment (Recommended)](#Create-and-activate-a-virtual-environment-(Recommended))
 - [Install Python dependencies](#Install-Python-dependencies)
+- [Create and activate a virtual environment (Recommended)](#create-and-activate-a-virtual-environment-recommended)
 - [Configure Tesseract Path](#Configure-Tesseract-Path)
 - [Usage](#Usage)
   - [Running the Pipeline](#Running-the-Pipeline)
@@ -18,7 +18,7 @@ Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the 
 - [Project Structure](#Project-Structure)
 - [Troubleshooting](#Troubleshooting)
 - [License](#License)
-- [Contributing](Contributing)
+- [Contributing](#Contributing)
 
 ## Overview of Project
 ### Features
@@ -40,7 +40,7 @@ Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the 
 5. **OCR Extraction:** Applies Otsu's Thresholding for contrast and passes the image to Tesseract for text extraction.
 
 ---
-### ## ⚠️ Prerequisites
+### ⚠️ Prerequisites
 
 Before installing the Python packages, you **must** install the Tesseract OCR engine on your system, as `pytesseract` is just a Python wrapper.
 
@@ -49,15 +49,17 @@ Before installing the Python packages, you **must** install the Tesseract OCR en
 - **Linux (Ubuntu/Debian):** `sudo apt install tesseract-ocr`
 
 ---
-### 🛠️ Installation
+### Installation
 
 1. **Clone the repository:**
-   ```bash
+```bash
    git clone `https://github.com/your-username/document-scanner-pipeline.git`
    cd document-scanner-pipeline
-  ```
+```
+
 
 ## Create and activate a virtual environment (Recommended)
+
 ```bash
 # Windows
 python -m venv venv
@@ -67,10 +69,14 @@ venv\Scripts\activate
 python3 -m venv venv
 source venv/bin/activate
 ```
+----------
+
 ## Install Python dependencies
-```bash
+--------
+  ```bash
 pip install -r requirements.txt
-```
+  ```
+--------
 
 ## Configure Tesseract Path
 Crucial for Windows users: Open `pipeline.py` and ensure the Tesseract executable path matches your installation:
@@ -79,7 +85,7 @@ Crucial for Windows users: Open `pipeline.py` and ensure the Tesseract executabl
 - pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
 - (Note: macOS and Linux users can usually comment out or delete this line, as Tesseract is added to the system PATH automatically).
 
-## 🚀 Usage
+## Usage
 ### Running the Pipeline
 - 1- Place an image of a document (e.g., a receipt, paper, or ID) inside an `images/` folder.
 - 2- Open `main.py` and update the image path at the bottom of the file:
@@ -99,7 +105,7 @@ python main.py
 ```bash
 pytest test_pipeline.py -v
 ```
-## 📂 Project Structure
+## Project Structure
 - ├── main.py                 # Entry point: Orchestrates the pipeline and visualization
 - ├── pipeline.py             # Core logic: Preprocessing, Contours, Transform, OCR
 - ├── test_pipeline.py        # Unit tests for the pipeline functions
@@ -107,16 +113,16 @@ pytest test_pipeline.py -v
 - ├── images/                 # Folder for input images (Create this yourself)
 - └── PipelineVisualization.png # Auto-generated output visualization
 
-## 🧪 Troubleshooting
+## Troubleshooting
 |Issue                        |Solution
 |-----------------------------|---------------------------------------------------------------------------------------------------------|
 |`TesseractNotFoundError`     |Ensure Tesseract OCR is installed on your OS and the path in `pipeline.py` is correct.                   |
 |`Document boundary not found`|The Canny edge parameters `(75, 200)` might need tweaking for your specific image lighting. Ensure the document contrasts well with the background.|
 |Poor OCR Text Extraction     |Ensure the final wrapped image is clear. You can adjust the Tesseract config in `extractText()` (e.g., changing `--psm 6` to `--psm 3` for fully automatic page segmentation).|
 
-## 📜 License
+## License
 This project is open-source and available under the `MIT License`.
 
-## 🤝 Contributing
+## Contributing
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page or submit a pull request to improve the edge detection algorithms or add support for multi-page PDF scanning.
 
