@@ -40,7 +40,7 @@ Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the 
 5. **OCR Extraction:** Applies Otsu's Thresholding for contrast and passes the image to Tesseract for text extraction.
 
 ---
-### ⚠️ Prerequisites
+### Prerequisites
 
 Before installing the Python packages, you **must** install the Tesseract OCR engine on your system, as `pytesseract` is just a Python wrapper.
 
