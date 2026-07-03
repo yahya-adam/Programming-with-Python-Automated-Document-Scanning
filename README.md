@@ -80,9 +80,10 @@ pip install -r requirements.txt
 
 ## Configure Tesseract Path
 Crucial for Windows users: Open `pipeline.py` and ensure the Tesseract executable path matches your installation:
-- Python
-- #Change this path if Tesseract is installed elsewhere
+```Python
+- # Change this path if Tesseract is installed elsewhere
 - pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
+```
 - (Note: macOS and Linux users can usually comment out or delete this line, as Tesseract is added to the system PATH automatically).
 
 ## Usage
