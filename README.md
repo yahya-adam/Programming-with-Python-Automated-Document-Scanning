@@ -4,11 +4,11 @@ An intelligent computer vision pipeline that automatically detects document boun
 Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the core functionality of mobile document scanning apps like CamScanner or Microsoft Lens.
 
 ## Table of Contents
-- [Overview of Project](#Overview-of-Project)
-  - [Features](#Features)
-  - [The Pipeline Workflow](#The-Pipeline-Workflow)
-  - [Prerequisites](#Prerequisites)
-  - [Installation](#Installation)
+- [📄 Smart Document Scanner & OCR Pipeline](#📄-Smart-Document-Scanner-&-OCR-Pipeline)
+- [✨ Features](#✨-Features)
+- [🏛️ Architecture & Design](#🏛️-Architecture-&-Design)
+- [🚀 Quick Start: Google Colab Setup](#🚀-Quick-Start:-Google-Colab-Setup)
+- [Installation](#Installation)
 - [Install Python dependencies](#Install-Python-dependencies)
 - [Create and activate a virtual environment (Recommended)](#create-and-activate-a-virtual-environment-recommended)
 - [Configure Tesseract Path](#Configure-Tesseract-Path)
@@ -20,33 +20,55 @@ Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the 
 - [License](#License)
 - [Contributing](#Contributing)
 
-## Overview of Project
-### Features
+# 📄 Smart Document Scanner & OCR Pipeline
 
-- **Automated Edge Detection:** Uses Gaussian Blur and Canny Edge Detection to isolate document boundaries.
-- **Smart Contour Finding:** Identifies the largest 4-point polygon representing the document.
-- **Perspective Transformation:** Warps the detected document into a flat, top-down "bird's-eye" view.
-- **Optical Character Recognition (OCR):** Extracts text from the scanned document using Tesseract.
-- **Visual Pipeline Output:** Generates a side-by-side comparison image showing the Original, Edges, and Final Scanned result.
-- **Unit Tested:** Includes `pytest` suites to ensure core preprocessing and contour logic remain robust.
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.5+-green.svg)](https://opencv.org/)
+[![Pytest](https://img.shields.io/badge/tested%20with-pytest-0a9ed1.svg)](https://docs.pytest.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
----
-### The Pipeline Workflow
-
-1. **Image Loading:** Reads the input image.
-2. **Preprocessing:** Converts to Grayscale ➔ Applies Gaussian Blur (Noise Reduction) ➔ Canny Edge Detection.
-3. **Contour Detection:** Finds all contours, sorts by area, and approximates polygons to find the 4 corners of the document.
-4. **Perspective Transform:** Calculates the transformation matrix and warps the image to a flat rectangle.
-5. **OCR Extraction:** Applies Otsu's Thresholding for contrast and passes the image to Tesseract for text extraction.
+A robust, Object-Oriented Document Scanner and Optical Character Recognition (OCR) pipeline. This project takes a photograph of a document, automatically detects its boundaries, applies a perspective transform to get a top-down view, and extracts the text using Tesseract OCR.
 
 ---
-### Prerequisites
 
-Before installing the Python packages, you **must** install the Tesseract OCR engine on your system, as `pytesseract` is just a Python wrapper.
+## ✨ Features
 
-- **Windows:** Download the installer from [UB-Mannheim Tesseract](https://github.com/UB-Mannheim/tesseract/wiki).
-- **macOS:** `brew install tesseract`
-- **Linux (Ubuntu/Debian):** `sudo apt install tesseract-ocr`
+* **🖼️ Automated Document Detection:** Uses Canny Edge Detection and Contour Approximation to find the 4 corners of a document.
+* **📐 Perspective Transformation:** Mathematically warps the detected document into a flat, top-down "scanned" view.
+* **🔤 Optical Character Recognition (OCR):** Extracts text from the scanned image using Tesseract.
+* **🏗️ Object-Oriented Architecture:** Refactored from procedural scripts into a clean, extensible class hierarchy (`BaseImageProcessor` -> `DocumentScanner`).
+* **🛡️ Robust Error Handling:** Implements custom exception hierarchies (`PipelineError`, `ImageLoadError`, `DocumentNotFoundError`) for graceful failure management.
+* **🧪 Fully Unit-Tested:** Comprehensive `pytest` suite using `unittest.mock` to ensure reliability without needing external files or engines during testing.
+
+---
+
+## 🏛️ Architecture & Design
+
+This project strictly adheres to modern Software Engineering principles:
+
+1. **Inheritance & Encapsulation:** 
+   * `BaseImageProcessor` handles fundamental tasks (loading, grayscale conversion, edge detection).
+   * `DocumentScanner` inherits from the base class and extends it with domain-specific logic (contour finding, perspective math, OCR).
+2. **Custom Exceptions:** Instead of generic crashes, the pipeline raises specific exceptions (e.g., `DocumentNotFoundError`), allowing the `main.py` execution flow to handle missing documents gracefully.
+3. **State Management:** Attributes like `self.original_image` are initialized as `None` to represent "unloaded" states, while `self.extracted_text` is initialized as `""` to ensure type safety for string operations.
+
+---
+
+## 🚀 Quick Start: Google Colab Setup
+
+Want to try it without installing anything locally? Google Colab is perfect for this! Since Colab runs on Linux, setting up Tesseract requires a quick system command.
+
+**1. Open a new Colab Notebook** and run the following cell to install dependencies:
+```python
+# Install essential libraries
+!pip install -r requirements.txt
+
+# Run pytest
+!pytest test_pipeline.py -v
+
+# Run entry point `main.py`
+!python main.py
+```
 
 ---
 ### Installation
@@ -88,32 +110,41 @@ Crucial for Windows users: Open `pipeline.py` and ensure the Tesseract executabl
 
 ## Usage
 ### Running the Pipeline
-- 1- Place an image of a document (e.g., a receipt, paper, or ID) inside an `images/` folder.
-- 2- Open `main.py` and update the image path at the bottom of the file:
+* 1- Place an image of a document (e.g., a receipt, paper, or ID) inside an `images/` folder.
+* 2- Open `main.py` and update the image path at the bottom of the file:
 ```Python
 if __name__ == "__main__":
     runPipeline("images/your_image.jpg") # Update this path
 ```
-- 3- Run the script:
+* 3- Run the script:
 ```bash
 python main.py
 ```
-- 4- Output: 
--   The extracted text will be printed to the console.
--   A visualization image named `PipelineVisualization.png` will be saved in the root directory showing the Original, Edge Detection, and - - Scanned/Wrapped results.
+* 4- Output: 
+*   The extracted text will be printed to the console.
+*   A visualization image named `PipelineVisualization.png` will be saved in the root directory showing the Original, Edge Detection, and - - Scanned/Wrapped results.
 
 ### Running Unit Tests
-- The project includes tests to verify the preprocessing and contour detection logic. Run them using pytest:
+* The project includes tests to verify the preprocessing and contour detection logic. Run them using pytest:
 ```bash
 pytest test_pipeline.py -v
 ```
+#### Expected Output:
+```text
+test_pipeline.py::TestBaseImageProcessor::test_loadImage_success PASSED
+test_pipeline.py::TestBaseImageProcessor::test_loadImage_failure PASSED
+test_pipeline.py::TestBaseImageProcessor::test_preprocessImage_valid PASSED
+test_pipeline.py::TestDocumentScanner::test_inheritance PASSED
+test_pipeline.py::TestDocumentScanner::test_documentContour_no_document PASSED
+...
+```
 ## Project Structure
-- ├── main.py                 # Entry point: Orchestrates the pipeline and visualization
-- ├── pipeline.py             # Core logic: Preprocessing, Contours, Transform, OCR
-- ├── test_pipeline.py        # Unit tests for the pipeline functions
-- ├── requirements.txt        # Python dependencies
-- ├── images/                 # Folder for input images (Create this yourself)
-- └── PipelineVisualization.png # Auto-generated output visualization
+* ├── main.py                 # Entry point: Orchestrates the pipeline and visualization
+* ├── pipeline.py             # Core logic: Preprocessing, Contours, Transform, OCR
+* ├── test_pipeline.py        # Unit tests for the pipeline functions
+* ├── requirements.txt        # Python dependencies
+* ├── images/                 # Folder for input images (Create this yourself)
+* └── PipelineVisualization.png # Auto-generated output visualization
 
 ## Troubleshooting
 |Issue                        |Solution
