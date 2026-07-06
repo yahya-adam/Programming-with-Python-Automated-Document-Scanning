@@ -3,7 +3,7 @@
 An intelligent computer vision pipeline that automatically detects document boundaries in images, applies perspective transformation to get a top-down view, and extracts text using Optical Character Recognition (OCR). 
 Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the core functionality of mobile document scanning apps like CamScanner or Microsoft Lens.
 
-## Table of Contents
+# Table of Contents
 - [Smart Document Scanner & OCR Pipeline](#Smart-Document-Scanner-&-OCR-Pipeline)
 - [Features](#Features)
 - [Architecture & Design](#Architecture-&-Design)
@@ -19,6 +19,8 @@ Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the 
 - [Troubleshooting](#Troubleshooting)
 - [License](#License)
 - [Contributing](#Contributing)
+  
+---
 
 ## Smart Document Scanner & OCR Pipeline
 
@@ -110,8 +112,8 @@ Crucial for Windows users: Open `pipeline.py` and ensure the Tesseract executabl
 
 ## Usage
 ### Running the Pipeline
-1- Place an image of a document (e.g., a receipt, paper, or ID) inside an `images/` folder.
-* 2- Open `main.py` and update the image path at the bottom of the file:
+*1- Place an image of a document (e.g., a receipt, paper, or ID) inside an `images/` folder.
+*2- Open `main.py` and update the image path at the bottom of the file:
 ```Python
 if __name__ == "__main__":
     runPipeline("images/your_image.jpg") # Update this path
