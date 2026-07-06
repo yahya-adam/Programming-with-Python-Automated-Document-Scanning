@@ -142,12 +142,13 @@ test_pipeline.py::TestDocumentScanner::test_documentContour_no_document PASSED
 ...
 ```
 ## Project Structure
-* ├── main.py                 # Entry point: Orchestrates the pipeline and visualization
-* ├── pipeline.py             # Core logic: Preprocessing, Contours, Transform, OCR
-* ├── test_pipeline.py        # Unit tests for the pipeline functions
-* ├── requirements.txt        # Python dependencies
-* ├── images/                 # Folder for input images (Create this yourself)
-* └── PipelineVisualization.png # Auto-generated output visualization
+├── main.py                 # Entry point: Orchestrates the pipeline and visualization\
+├── pipeline.py             # Core logic: Preprocessing, Contours, Transform, OCR\
+├── test_pipeline.py        # Unit tests for the pipeline functions\
+├── requirements.txt        # Python dependencies\
+├── images/                 # Folder for input images (Create this yourself)\
+└── PipelineVisualization.png # Auto-generated output visualization
+
 
 ## Troubleshooting
 |Issue                        |Solution
