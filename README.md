@@ -4,10 +4,10 @@ An intelligent computer vision pipeline that automatically detects document boun
 Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the core functionality of mobile document scanning apps like CamScanner or Microsoft Lens.
 
 # Table of Contents
-- [Smart Document Scanner & OCR Pipeline](#Smart-Document-Scanner-&-OCR-Pipeline)
+- [Smart Document scanner & OCR Pipeline](#smart-document-scanner--ocr-pipeline)
 - [Features](#Features)
-- [Architecture & Design](#Architecture-&-Design)
-- [Quick setup (Google Colab)](#Quick-setup (Google Colab))
+- [Architecture & Design](#architecture--design)
+- [Quick setup (Google Colab)](#quick-setup-google-colab)
 - [Installation](#Installation)
 - [Install Python dependencies](#Install-Python-dependencies)
 - [Create and activate a virtual environment (Recommended)](#create-and-activate-a-virtual-environment-recommended)
@@ -22,7 +22,7 @@ Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the 
   
 ---
 
-## Smart Document Scanner & OCR Pipeline
+## Smart Document scanner & OCR Pipeline
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.5+-green.svg)](https://opencv.org/)
