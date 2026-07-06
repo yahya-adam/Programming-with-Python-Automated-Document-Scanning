@@ -7,7 +7,7 @@ Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the 
 - [Smart Document Scanner & OCR Pipeline](#Smart-Document-Scanner-&-OCR-Pipeline)
 - [Features](#Features)
 - [Architecture & Design](#Architecture-&-Design)
-- [Quick Start(Google Colab Setup)](#Quick-Start(Google-Colab-Setup))
+- [Quick setup (Google Colab)](#Quick-setup (Google Colab))
 - [Installation](#Installation)
 - [Install Python dependencies](#Install-Python-dependencies)
 - [Create and activate a virtual environment (Recommended)](#create-and-activate-a-virtual-environment-recommended)
@@ -56,7 +56,7 @@ This project strictly adheres to modern Software Engineering principles:
 
 ---
 
-## Quick Start(Google Colab Setup)
+## Quick setup (Google Colab)
 
 Want to try it without installing anything locally? Google Colab is perfect for this! Since Colab runs on Linux, setting up Tesseract requires a quick system command.
 
@@ -112,8 +112,8 @@ Crucial for Windows users: Open `pipeline.py` and ensure the Tesseract executabl
 
 ## Usage
 ### Running the Pipeline
-*1- Place an image of a document (e.g., a receipt, paper, or ID) inside an `images/` folder.
-*2- Open `main.py` and update the image path at the bottom of the file:
+* 1- Place an image of a document (e.g., a receipt, paper, or ID) inside an `images/` folder.
+* 2- Open `main.py` and update the image path at the bottom of the file:
 ```Python
 if __name__ == "__main__":
     runPipeline("images/your_image.jpg") # Update this path
