@@ -7,7 +7,7 @@ Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the 
 - [Smart Document Scanner & OCR Pipeline](#Smart-Document-Scanner-&-OCR-Pipeline)
 - [Features](#Features)
 - [Architecture & Design](#Architecture-&-Design)
-- [Quick Start: Google Colab Setup](#Quick-Start-:-Google-Colab-Setup)
+- [Quick Start(Google Colab Setup)](#Quick-Start(Google-Colab-Setup))
 - [Installation](#Installation)
 - [Install Python dependencies](#Install-Python-dependencies)
 - [Create and activate a virtual environment (Recommended)](#create-and-activate-a-virtual-environment-recommended)
@@ -54,7 +54,7 @@ This project strictly adheres to modern Software Engineering principles:
 
 ---
 
-## Quick Start: Google Colab Setup
+## Quick Start(Google Colab Setup)
 
 Want to try it without installing anything locally? Google Colab is perfect for this! Since Colab runs on Linux, setting up Tesseract requires a quick system command.
 
