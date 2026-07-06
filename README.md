@@ -112,9 +112,9 @@ Crucial for Windows users: Open `pipeline.py` and ensure the Tesseract executabl
 
 ## Usage
 ### Running the Pipeline  
-1- Place an image of a document (e.g., a receipt, paper, or ID) inside an `images/` folder.  
+1- Place an image of a document (e.g., a receipt, paper, or ID) inside an `images/` folder.\
+2- Open `main.py` and update the image path at the bottom of the file:\
 
-2- Open `main.py` and update the image path at the bottom of the file:
 ```Python
 if __name__ == "__main__":
     runPipeline("images/your_image.jpg") # Update this path
