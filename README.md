@@ -4,10 +4,10 @@ An intelligent computer vision pipeline that automatically detects document boun
 Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the core functionality of mobile document scanning apps like CamScanner or Microsoft Lens.
 
 ## Table of Contents
-- [📄 Smart Document Scanner & OCR Pipeline](#📄-Smart-Document-Scanner-&-OCR-Pipeline)
-- [✨ Features](#✨-Features)
-- [🏛️ Architecture & Design](#🏛️-Architecture-&-Design)
-- [🚀 Quick Start: Google Colab Setup](#🚀-Quick-Start:-Google-Colab-Setup)
+- [Smart Document Scanner & OCR Pipeline](#Smart-Document-Scanner-&-OCR-Pipeline)
+- [Features](#Features)
+- [🏛️ Architecture & Design](#Architecture-&-Design)
+- [Quick Start: Google Colab Setup](#Quick-Start:-Google-Colab-Setup)
 - [Installation](#Installation)
 - [Install Python dependencies](#Install-Python-dependencies)
 - [Create and activate a virtual environment (Recommended)](#create-and-activate-a-virtual-environment-recommended)
@@ -20,7 +20,7 @@ Built with **OpenCV**, **NumPy**, and **Tesseract**, this project simulates the 
 - [License](#License)
 - [Contributing](#Contributing)
 
-# 📄 Smart Document Scanner & OCR Pipeline
+# Smart Document Scanner & OCR Pipeline
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.5+-green.svg)](https://opencv.org/)
@@ -31,7 +31,7 @@ A robust, Object-Oriented Document Scanner and Optical Character Recognition (OC
 
 ---
 
-## ✨ Features
+## Features
 
 * **🖼️ Automated Document Detection:** Uses Canny Edge Detection and Contour Approximation to find the 4 corners of a document.
 * **📐 Perspective Transformation:** Mathematically warps the detected document into a flat, top-down "scanned" view.
@@ -42,7 +42,7 @@ A robust, Object-Oriented Document Scanner and Optical Character Recognition (OC
 
 ---
 
-## 🏛️ Architecture & Design
+## Architecture & Design
 
 This project strictly adheres to modern Software Engineering principles:
 
@@ -54,7 +54,7 @@ This project strictly adheres to modern Software Engineering principles:
 
 ---
 
-## 🚀 Quick Start: Google Colab Setup
+## Quick Start: Google Colab Setup
 
 Want to try it without installing anything locally? Google Colab is perfect for this! Since Colab runs on Linux, setting up Tesseract requires a quick system command.
 
@@ -110,17 +110,17 @@ Crucial for Windows users: Open `pipeline.py` and ensure the Tesseract executabl
 
 ## Usage
 ### Running the Pipeline
-* 1- Place an image of a document (e.g., a receipt, paper, or ID) inside an `images/` folder.
-* 2- Open `main.py` and update the image path at the bottom of the file:
+1- Place an image of a document (e.g., a receipt, paper, or ID) inside an `images/` folder.
+2- Open `main.py` and update the image path at the bottom of the file:
 ```Python
 if __name__ == "__main__":
     runPipeline("images/your_image.jpg") # Update this path
 ```
-* 3- Run the script:
+3- Run the script:
 ```bash
 python main.py
 ```
-* 4- Output: 
+4- Output: 
 *   The extracted text will be printed to the console.
 *   A visualization image named `PipelineVisualization.png` will be saved in the root directory showing the Original, Edge Detection, and - - Scanned/Wrapped results.
 
