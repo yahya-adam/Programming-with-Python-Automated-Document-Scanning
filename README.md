@@ -163,3 +163,4 @@ This project is open-source and available under the `MIT License`.
 ## Contributing
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page or submit a pull request to improve the edge detection algorithms or add support for multi-page PDF scanning.
 
+new
