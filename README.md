@@ -71,6 +71,7 @@ Want to try it without installing anything locally? Google Colab is perfect for 
 # Run entry point `main.py`
 !python main.py
 ```
+
 ---
 
 ## Installation
