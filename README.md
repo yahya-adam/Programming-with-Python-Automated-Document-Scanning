@@ -46,6 +46,9 @@ A robust, Object-Oriented Document Scanner and Optical Character Recognition (OC
 
 ## Architecture & Design
 
+Document Scanner pipeline
+[![alt text](images\DocumentScanner.png)]
+
 This project strictly adheres to modern Software Engineering principles:
 
 1. **Inheritance & Encapsulation:** 
